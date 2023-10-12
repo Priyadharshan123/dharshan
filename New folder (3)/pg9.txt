@@ -1,0 +1,68 @@
+import javax.swing.*; 
+import java.awt.event.*; 
+public class NestedPopupMenu1 
+{ 
+JPopupMenuPmenu; 
+JMenuItemMitem; 
+public static void main(String[] args) 
+{ 
+NestedPopupMenu1 n= new NestedPopupMenu1(); 
+} 
+public NestedPopupMenu1() 
+{ 
+JFrame frame=new JFrame("CREATING A POPUP MENU WITH NESTED MENUS"); 
+frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+JMenuBarmenubar= new JMenuBar(); 
+JMenufilemenu=new JMenu("FILE"); 
+filemenu.add(new JSeparator()); 
+JMenueditmenu=new JMenu("EDIT"); 
+filemenu.add(new JSeparator()); 
+JMenuItem fileItem1= new JMenuItem("NEW"); 
+JMenuItem fileItem2= new JMenuItem("OPEN"); 
+JMenuItem fileItem3= new JMenuItem("CLOSE"); 
+fileItem3.add(new JSeparator()); 
+JMenuItem fileItem4=new JMenuItem("SAVE"); 
+JMenuItem editItem1= new JMenuItem("CUT"); JMenuItem editItem2= new 
+JMenuItem("COPY");  
+editItem2.add(new JSeparator()); 
+JMenuItem editItem3= new JMenuItem("PASTE"); 
+JMenuItem editItem4= new JMenuItem("INSERT"); 
+filemenu.add(fileItem1); 
+filemenu.add(fileItem2); 
+filemenu.add(fileItem3); 
+filemenu.add(fileItem4); 
+editmenu.add(editItem1); 
+editmenu.add(editItem2); 
+editmenu.add(editItem3); 
+editmenu.add(editItem4); 
+menubar.add(filemenu); 
+menubar.add(editmenu); 
+frame.setJMenuBar(menubar); 
+Pmenu=new JPopupMenu(); Mitem=new 
+JMenuItem("Line up Icon"); 
+Pmenu.add(Mitem); 
+Mitem=new JMenuItem("Refresh"); 
+Pmenu.add(Mitem); 
+Mitem=new JMenuItem("Properties"); 
+Pmenu.add(Mitem); 
+Pmenu.add(createMenu("NEW")); 
+frame.addMouseListener(new 
+MouseAdapter() 
+{ 
+public void mouseReleased(MouseEvent Me) 
+{ 
+if(Me.isPopupTrigger()) 
+{ 
+Pmenu.show(Me.getComponent(),Me.getX(),Me.getY()); 
+}} 
+}); 
+frame.setSize(250,250); 
+frame.setVisible(true); 
+} 
+publicJMenucreateMenu(String title) 
+{ 
+JMenu m= new JMenu(title); 
+m.add("FOLDER"); 
+m.add("TEXT DOCUMENT"); 
+m.add("SHORTCUT"); 
+return m;}}

@@ -1,0 +1,42 @@
+import java.io.*; 
+import java.util.*; 
+interface area 
+{ 
+public void calculate(); 
+} 
+class rectangle implements area 
+{ 
+int l,b,c1; 
+public void calculate() 
+{ 
+Scanner s=new Scanner(System.in); 
+System.out.println("enter the length"); 
+l=s.nextInt(); 
+System.out.println("enter the breadth"); 
+b=s.nextInt(); 
+c1=l*b; 
+System.out.println("area of the rectangle is "+c1); 
+} 
+} 
+class square implements area 
+{ 
+int a,c2; 
+public void calculate() 
+{ 
+Scanner s=new Scanner(System.in); 
+System.out.println("enter the a value for square"); 
+a=s.nextInt(); 
+c2=a*a; 
+System.out.println("area of the square is "+c2); 
+} 
+} 
+class Program2 
+{ 
+public static void main(String args[]) 
+{ 
+rectangle r=new rectangle(); 
+square s1=new square(); 
+r.calculate(); 
+s1.calculate(); 
+} 
+}

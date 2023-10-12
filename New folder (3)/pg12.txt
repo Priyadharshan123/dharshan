@@ -1,0 +1,16 @@
+import java.io.*; class program12 
+{ 
+public static void main(String args[]) 
+{ 
+RandomAccessFilerf; try 
+{ 
+rf=new RandomAccessFile("jl.txt","rw"); rf.seek(rf.length()); rf.writeBytes("coimbatore"); 
+rf.writeBytes("madurai"); System.out.println(rf.length()); 
+rf.close(); 
+} 
+catch(IOExceptionioe) 
+{ 
+System.out.println(ioe); 
+} 
+} 
+}
